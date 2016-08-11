@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}博客列表{% endblock %}
+{% block head %}{% endblock %}
+
+{% block content %}
+{% if tag %}
+  <span style="position: absolute; right: 0px; top:0px;" class="monospaced green text">标签为{{tag}}的博客({{count}})</span>
+  <a href="/"><span style="position: absolute; left: 0px; top:0px;" class="monospaced">全部</span></a>
+{% else %}
+  <span style="position: absolute; right: 0px; top:0px;" class="monospaced green text">全部({{count}})</span>
+{% endif %}
+
+<div class="ui middle aligned list" style="margin-top: 28px;">
+  {% for post in posts %}
+  <div class="item" style="margin-bottom: 15px;">
+  	<div class="right floated content">
+      <span class="grey text">{{ humanize(post.time) }}</span>
+    </div>
+    <div class="content">
+      <div class="header">
+      	<a href="#"><span class=" text">{{ post.title }}</span></a>
+      </div>
+      <div class="monospaced description">
+      	{% set tags = post.tags.split(',') %}
+      	{% for tag in tags %}
+      	<span class="grey text" style="font-size: 10px;">#</span><a href="/?tag={{ tag }}"><span class="teal text" style="font-size: 10px;">{{ tag }}</span></a>
+      	{% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+  {% if count > pagination.per_page %}
+  <div class="ui centered buttons">
+    {% if pagination.has_prev %}
+    <a class="ui grey basic button" href="{{ to_page(pagination.page - 1) }}">Perv</a>
+    {% else %}
+    <a class="ui grey basic disabled button">Perv</a>
+    {% endif %}
+    {% if pagination.has_next %}
+    <a class="ui grey basic button" href="{{ to_page(pagination.page + 1) }}">Next</a>
+    {% else %}
+    <a class="ui grey basic disabled button">Next</a>
+    {% endif %}
+  </div>
+  {% endif %}
+{% endblock %}

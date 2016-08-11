@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}标签列表{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/static/jqcloud.min.css">
+<script src="/static/jqcloud.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<div id="tags" style="width: 100%; height: 60%; position: relative;"></div>
+{% endblock %}
+
+{% block footer %}
+
+<script>
+var tags = {{ tags|safe }};
+var words = [];
+$.each(tags, function(key, value) {
+	var ob = {};
+	ob["text"] = key;
+	ob["weight"] = value;
+	ob["link"] = "/?tag=" + key;
+
+	words.push(ob);
+});
+console.log(words);
+
+$(function() {
+
+  $('#tags').jQCloud(words, {
+  	autoResize: true,
+  	colors: ["#00B5AD", "#1B1C1D", "#F2C61F", "#00B5AD", "#D95C5C", "#564F8A", "#D9499A", "#E07B53", "#5BBD72"],
+  	fontSize: {
+    	from: 0.2,
+    	to: 0.03
+  	  }
+	});
+ });
+</script>
+{% endblock %}

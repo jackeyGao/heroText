@@ -1,0 +1,62 @@
+.logo {
+    text-align: center;
+    position:absolute;
+    bottom:0px;
+}
+
+html, body, #container { 
+    height: 100%; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body > #container { 
+    height: auto; 
+    min-height: 100%; 
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.message-list {
+	padding: 0px 35px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #eeeeee;
+}
+
+.monospaced {
+	font-family: Courier New;
+}
+
+.greyborder {
+	border-style: solid; 
+	border-width: 1px; 
+	border-color: #eeeeee;
+}
+
+.xxlarge {
+	font-size: 24px;
+    height: auto;
+}
+
+#footer {
+    border-radius:5px;
+    text-align: center; 
+    clear: both; 
+    position: relative; 
+}
+
+#menu {
+    height: 30px;
+    background: #eeeeee;
+    text-align: center; 
+    clear: both; 
+    position: relative; 
+}
+
+.content-wrap {
+  padding: 0px 0px 180px 20px;
+}
+
