@@ -4,22 +4,27 @@
 
 {% block content %}
 {% for year, posts in data.items() %}
-  <div style="height: 28px">
-    <h3 class="ui right floated green header" style="margin-bottom: 0px;">
-      {{ posts|length }}
-    </h3>
-    <h3 class="ui left floated grey header">
-      {{ year }}年
-    </h3>
+  <div class="ui year-header selection list" style="margin: 0px 0px;">
+    <div class="item" data-year="{{ year }}">
+      <div class="right floated content">
+      <h5 class="ui teal header" style="margin-bottom: 0px;">
+        {{ posts|length }}
+      </h5>
+      </div>
+      <div class="content">
+        <div class="header"><span class="grey text">{{ year }}年</span></div>
+      </div>
+    </div>
   </div>
-   <div class="ui selection list" style="margin-top: 0px;">
+
+  <div id="{{ year }}-items" class="ui selection list" style="margin-top: 0px;margin-left: 28px;display: none;">
     {% for post in posts|sort(attribute='time', reverse=True) %}
     <div class="item">
       <div class="right floated content">
         <span class="grey text">{{ post.time.strftime('%Y-%m-%d') }}</span>
       </div>
       <div class="content">
-        <div class="header"><a href="#"><span class="blue text">{{ post.title }}</span></a></div>
+        <div class="header"><a href="/post/{{ post.title }}"><span class="blue text">{{ post.title }}</span></a></div>
       </div>
     </div>
     {% endfor %}
@@ -28,6 +33,14 @@
 {% endblock %}
 {% block footer %}
 <script>
+$('.year-header .item').on('click', function() {
+  var year = $(this).data("year");
+  $('#' + year + '-items').slideToggle();
+  $(this).find(".content span").toggleClass("grey");
+  $(this).find(".content span").toggleClass("green");
+});
 
+// 本年列表展开
+$('.year-header .item').first().trigger("click");
 </script>
 {% endblock %}

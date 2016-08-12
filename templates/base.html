@@ -25,7 +25,7 @@
 
           <div class="ui horizontal bulleted link list">
           <a class="item" href="/">
-            <span class="blue text">主页</span>
+            <span class="blue text">首页</span>
           </a>
           <a class="item" href="/tags/">
             <span class="blue text">标签</span>
@@ -34,14 +34,17 @@
             <span class="blue text">归档</span>
           </a>
           </div>
-          <div class="ui divider"></div>
+
+          <div class="ui horizontal divider">
+            <a href="https://omem.me/"><i class="home icon"></i></a>
+          </div>
         </div>
       </div>
 
 
     <!-- content start -->
     <div class="ui centered grid" style="margin-top: 1em;margin-bottom: 3em;">
-      <div class="seven wide column" style="padding: 0px; border-radius: 5px;">
+      <div class="{% block wide %}left aligned seven{% endblock %} wide column" style="padding: 0px; border-radius: 5px;">
       {% block content %}
       {% endblock %}
       </div>
@@ -52,10 +55,11 @@
 
     <div class="ui centered grid">
     <div class="ten wide column" style="padding: 0px;">
-    <div class="ui divider"></div>
+    <div class="ui horizontal divider">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><i class="creative commons icon"></i></a>
+    </div>
     <div id="footer">
-      <span class="monospaced grey text"><b><a href="https://github.com/jackeyGao/MyIndex"><i class="green github icon"></i></a> | © 2016 JackeyGao. Power by <a href="https://www.conoha.jp/referral/?token=G8vOyReluNtZN0fQSSAyNzldtPOCAFhanp39bkuppaJG.w90xHc-01S"><span class="green text">Conoha</span></a>.Based on <a href="http://flask.pocoo.org"><span class="green text">Flask<span></a></b> </span>
-  </div>
+      <span class="monospaced grey text"><b><a href="https://github.com/jackeyGao/heroText"><i class="green github icon"></i></a> | © 2016 JackeyGao. Power by <a href="https://www.conoha.jp/referral/?token=G8vOyReluNtZN0fQSSAyNzldtPOCAFhanp39bkuppaJG.w90xHc-01S"><span class="green text">Conoha</span></a>.Based on <a href="http://flask.pocoo.org/"><span class="green text">Flask</span></a>.</b> </span>
     </div>
     </div>
     </div>

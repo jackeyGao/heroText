@@ -18,7 +18,7 @@
     </div>
     <div class="content">
       <div class="header">
-      	<a href="#"><span class=" text">{{ post.title }}</span></a>
+      	<a href="/post/{{ post.title }}"><span class=" text">{{ post.title }}</span></a>
       </div>
       <div class="monospaced description">
       	{% set tags = post.tags.split(',') %}
