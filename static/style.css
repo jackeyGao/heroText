@@ -80,8 +80,6 @@ body > #container {
 .markdown a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
 .markdown a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
 
-.markdown p{ margin: 1em 0; }
-
 .markdown img { max-width:100%; }
 
 
@@ -105,7 +103,7 @@ body > #container {
 
 .markdown img { border: 1px solid #eeeeee; border-radius: 5px;  }
 
-.markdown table { border-collapse: collapse; border-spacing: 0;  }
+.markdown table { border-collapse: collapse; border-spacing: 0; color: #767676;  }
 .markdown td { vertical-align: top; }
 .markdown table {display: block;width: 100%;overflow: auto;word-break: normal;word-break: keep-all;}
 .markdown table th {font-weight: bold;}
@@ -127,7 +125,7 @@ body > #container {
 .markdown h1,h2,h3,h4,h5 { color: #767676; margin: 0px; }
 .markdown li { color: #00B5AD; }
 .markdown .blockquote-normal  { 
-    background-color: #D0ECE7; 
+    background-color: #FEF9E7; 
     color:#767676; 
     margin:0; 
     border-left: 0.5em #5BBD72 solid; 
