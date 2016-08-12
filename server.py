@@ -99,6 +99,5 @@ app.jinja_env.globals['to_page'] = url_for_other_page
 app.jinja_env.globals['humanize'] = humanize
 app.jinja_env.globals['markrender'] = markrender
 
-
 if __name__ == "__main__":
     app.run()
