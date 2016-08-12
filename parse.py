@@ -16,7 +16,8 @@ def save(headers, content):
     headers["time"] = headers["date"]
     headers.pop("date")
     if isinstance(headers["tags"], list):
-        headers["tags"] = ','.join(headers["tags"])
+        tags = [ t for t in headers['tags'] ]
+        headers["tags"] = ','.join(tags)
     else:
         headers["tags"] = headers["tags"]
 

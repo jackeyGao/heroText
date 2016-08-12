@@ -4,7 +4,7 @@
 
 {% block content %}
 {% if tag %}
-  <span style="position: absolute; right: 0px; top:0px;" class="monospaced green text">标签为{{tag}}的博客({{count}})</span>
+  <span style="position: absolute; right: 0px; top:0px;" class="monospaced green text">标签为 <span class="grey text"><b>{{tag}}</b></span> 的博客({{count}})</span>
   <a href="/"><span style="position: absolute; left: 0px; top:0px;" class="monospaced">全部</span></a>
 {% else %}
   <span style="position: absolute; right: 0px; top:0px;" class="monospaced green text">全部({{count}})</span>

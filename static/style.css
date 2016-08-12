@@ -37,7 +37,7 @@ body > #container {
 }
 
 .xxlarge {
-	font-size: 24px;
+    font-size: 24px;
     height: auto;
 }
 
@@ -46,6 +46,12 @@ body > #container {
     text-align: center; 
     clear: both; 
     position: relative; 
+}
+
+.year {
+    border-radius:5px;
+    height: 30px;
+    background: #F3F3F4;
 }
 
 #menu {

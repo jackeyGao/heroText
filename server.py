@@ -8,6 +8,7 @@ Created Time: 四  8/11 11:38:45 2016
 import json
 import arrow
 from itertools import chain
+from collections import defaultdict
 from collections import Counter
 from flask import Flask
 from flask import render_template
@@ -52,6 +53,7 @@ def index(page):
     pagination = Pagination(page, PER_PAGE, count) 
     return render_template('posts.html', **locals())
 
+
 @app.route('/tags/')
 def tags():
     tags = [ post.get_tags() for post in Post.select() ]
@@ -59,6 +61,15 @@ def tags():
     return render_template('tags.html', **locals())
 
 
+@app.route('/archives/')
+def archives():
+    data = defaultdict(list)
+    posts = Post.select().order_by(Post.time.desc())
+
+    for post in posts:
+        data[post.time.year].append(post)
+
+    return render_template('archives.html', **locals())
 
 
 app.jinja_env.globals['to_page'] = url_for_other_page

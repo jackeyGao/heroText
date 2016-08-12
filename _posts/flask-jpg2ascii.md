@@ -3,10 +3,10 @@ date: 2015-11-18 14:17:10
 categories:
 - Python
 tags:
-  - python
-  - flask
-  - jpg2ascii
-  - heroku
+  - Python
+  - Flask
+  - JPG2ASCII
+  - Heroku
 
 ---
 
