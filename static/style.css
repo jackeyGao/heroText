@@ -104,8 +104,7 @@ body > #container {
 .markdown img { border: 1px solid #eeeeee; border-radius: 5px;  }
 
 .markdown table { border-collapse: collapse; border-spacing: 0; color: #767676;  }
-.markdown td { vertical-align: top; }
-.markdown table {display: block;width: 100%;overflow: auto;word-break: normal;word-break: keep-all;}
+.markdown table {display: block;width: 100%;overflow: auto;word-break: normal;word-break: keep-all; margin-bottom: 10px;}
 .markdown table th {font-weight: bold;}
 .markdown table th,
 .markdown table td {padding: 6px 13px;border: 1px solid #ddd;}

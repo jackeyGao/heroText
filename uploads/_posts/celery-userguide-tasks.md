@@ -206,12 +206,12 @@ key|value
 **utc:**|如果为True说明调用者启动了utc
 
 3.1 新属性
-
 key|value
---|--
+---|---
 **headers:**|映射消息头
 **reply_to:**|发送replay到哪个队列
 **correlation_id:**|通常与任务id通用， 常用语amqp的跟踪回复
+
 
 一个从context获取获取信息的例子:
 
