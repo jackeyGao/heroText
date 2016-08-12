@@ -11,11 +11,15 @@ from itertools import chain
 from collections import defaultdict
 from collections import Counter
 from flask import Flask
+from flask import send_from_directory
+from flask import abort
 from flask import render_template
 from flask import request
 from flask import url_for
+from peewee import DoesNotExist
 from pagination import Pagination
 from db import Post
+from markdown import markrender
 
 app = Flask(__name__)
 PER_PAGE = 15
@@ -72,8 +76,29 @@ def archives():
     return render_template('archives.html', **locals())
 
 
+@app.route('/post/<string:title>')
+def post(title):
+    try:
+        post = Post.select().where(Post.title==title).get()
+    except DoesNotExist:
+        abort(404)
+    return render_template('post.html', **locals())
+
+
+@app.route('/uploads/<path:path>')
+@app.route('/down/<path:path>')
+def uploads(path):
+    return send_from_directory('uploads', path)
+
+
+@app.route('/test')
+def test():
+    return render_template('test.html', **locals())
+
 app.jinja_env.globals['to_page'] = url_for_other_page
 app.jinja_env.globals['humanize'] = humanize
+app.jinja_env.globals['markrender'] = markrender
+
 
 if __name__ == "__main__":
     app.run()

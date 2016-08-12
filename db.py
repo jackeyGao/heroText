@@ -11,6 +11,7 @@ db = SqliteDatabase('post.db')
 db.connect()
 
 class Post(Model):
+    filename = CharField()
     time = DateTimeField()
     title = CharField()
     tags = CharField()
@@ -23,3 +24,5 @@ class Post(Model):
     def get_tags(self):
         return self.tags.split(',')
 
+if __name__ == '__main__':
+    db.create_tables([Post,])

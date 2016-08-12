@@ -12,7 +12,7 @@ from db import Post
 from db import db
 
 @db.atomic()
-def save(headers, content):
+def save(headers, content, post):
     headers["time"] = headers["date"]
     headers.pop("date")
     if isinstance(headers["tags"], list):
@@ -22,8 +22,9 @@ def save(headers, content):
         headers["tags"] = headers["tags"]
 
     headers["content"] = content
+    headers["filename"] = post
 
-    allow_keys = ('time', 'title', 'tags', 'content')
+    allow_keys = ('time', 'title', 'tags', 'content', 'filename')
     for key in headers.keys():
         if key not in allow_keys:
             headers.pop(key)
@@ -31,9 +32,9 @@ def save(headers, content):
     try:
         post = Post.create(**headers)
         print("The post (%s) was created!" % post.title)
-    except IntegrityError:
+    except IntegrityError as e:
         q = Post.update(**headers).where(Post.title==headers["title"])
-        print q.execute()
+        q.execute()
         print("The post (%s) was updated!" % headers["title"])
 
 
@@ -47,8 +48,8 @@ def parse_all(posts_dir, save_callback):
         with open(path, 'r') as md:
             header, content = md.read().split('\n---\n')
 
-        save(yaml.load(header), content)
+        save(yaml.load(header), content, post)
 
 
 if __name__ == '__main__':
-    parse_all('./_posts/', save)
+    parse_all('./uploads/_posts/', save)
