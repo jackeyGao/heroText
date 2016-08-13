@@ -51,6 +51,7 @@ markdown = m.Markdown(
     m.EXT_QUOTE
 )
 
+#toc = m.Markdown(m.HtmlTocRenderer())
 
 def markrender(content):
     return markdown(content)
