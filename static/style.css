@@ -154,18 +154,18 @@ body > #container {
 .markdown .blockquote-center::before {
   top: -20px;
   background-image: url("/static/quote-l.svg");
-  border-top: 1px solid #ccc;
 }
 
 .markdown .blockquote-center::after {
   bottom: -20px;
   background-image: url("/static/quote-r.svg");
-  border-bottom: 1px solid #ccc;
   background-position: 100% 8px;
 }
 
 .markdown .blockquote-center p {
+  font-family: "微软雅黑";
   margin-bottom: 30px;
+  font-size: 18px;
   text-align: center;
 }
 
