@@ -34,6 +34,9 @@ def url_for_other_page(page):
 
 
 def humanize(time):
+    if arrow.get(time) > arrow.now().datetime:
+        return "Sticky Post"
+
     if time is None:
         return None
     return arrow.get(time, TIMEZONE).humanize()
