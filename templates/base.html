@@ -43,11 +43,13 @@
 
 
     <!-- content start -->
-    <div class="ui centered grid" style="margin-top: 1em;margin-bottom: 3em;">
-      <div class="{% block wide %}left aligned seven{% endblock %} wide column" style="padding: 0px; border-radius: 5px;">
+    <div class="ui grid" style="margin-top: 1em;margin-bottom: 3em;">
+      <div class="{% block wide %}centered aligned seven{% endblock %} wide column" style="padding: 0px; border-radius: 5px;">
       {% block content %}
       {% endblock %}
       </div>
+      {% block extra %}
+      {% endblock %}
     </div>
     <!-- content start -->
     <!-- header end -->

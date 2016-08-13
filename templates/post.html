@@ -4,9 +4,11 @@
 <link rel="stylesheet" href="/static/solarized.css">
 {% endblock %}
 
-{% block wide %}eight{% endblock %}
+{% block wide %}centered aligned eight{% endblock %}
+
 {% block content %}
 <div class="ui left aligned clearing monospaced segment" style="padding: 14px;">
+  
   <div class="header" style="height: 45px;">
     <h5 class="ui grey right floated header">{{ post.time.strftime("%B %d, %Y, %H:%M %p") }}</h5>
     <h3 class="ui green left floated header">{{ post.title }}</h3>
