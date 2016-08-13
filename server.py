@@ -26,9 +26,11 @@ PER_PAGE = 15
 TIMEZONE = "UTC"
 
 def url_for_other_page(page):
+    params = dict(request.args.copy())
     args = request.view_args.copy()
-    args['page'] = page
-    return url_for(request.endpoint, **args)
+    params.update(args)
+    params['page'] = page
+    return url_for(request.endpoint, **params)
 
 
 def humanize(time):
