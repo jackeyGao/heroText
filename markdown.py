@@ -42,7 +42,10 @@ class HighlighterRenderer(m.HtmlRenderer):
         return '<blockquote class="blockquote-normal">%s</blockquote>' % text
 
     def image(self, link, title="", alt=''):
-        return '<p><img src="%s" alt="%s"></p>\n<p class="img-title">"%s"</p>' % (link, alt, title)
+        if title:
+            return '<p><img src="%s" alt="%s"></p>\n<p class="img-title">"%s"</p>' % (link, alt, title)
+        else:
+            return '<p><img src="%s" alt="%s"></p>\n' % (link, alt)
 
 
 
