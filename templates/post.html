@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}{{ post.title }}{% endblock %}
 {% block head %}
+<link rel="stylesheet" href="/static/markdown.css">
 <link rel="stylesheet" href="/static/solarized.css">
 {% endblock %}
 
@@ -8,7 +9,6 @@
 
 {% block content %}
 <div class="ui left aligned clearing monospaced segment" style="padding: 14px;">
-  
   <div class="header" style="height: 45px;">
     <h5 class="ui grey right floated header">{{ post.time.strftime("%B %d, %Y, %H:%M %p") }}</h5>
     <h3 class="ui green left floated header">{{ post.title }}</h3>
@@ -16,9 +16,7 @@
   <div class="markdown codehilite">
     {{ markrender(post.content)|safe }}
   </div>
-
   <div class="ui divider" style="margin: 8px -14px"></div>
-
   <div class="ui breadcrumb">
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><i class="grey creative commons icon"></i></a>
     <div class="divider">|</div>
@@ -28,11 +26,13 @@
     #<a href="/?tag={{ tag }}"><span class="blue text">{{ tag }}</span></a>
     {% endfor %}
   </div>
-
   <div class="ui divider" style="margin: 8px -14px"></div>
-    
   <div class="ds-thread" data-thread-key="{{ post.title }}" data-title="{{ post.title }}"></div>
-  <script>
+</div>
+{% endblock %}
+
+{% block footer %}
+<script>
   var duoshuoQuery = {short_name:"jackeygaoblog"};
     (function() {
       var ds = document.createElement('script');
@@ -42,11 +42,5 @@
       (document.getElementsByTagName('head')[0] 
        || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
-  </script>
-</div>
-
-{% endblock %}
-
-{% block footer %}
-
+</script>
 {% endblock %}

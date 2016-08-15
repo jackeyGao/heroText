@@ -2,7 +2,6 @@
 {% block title %}标签列表{% endblock %}
 {% block head %}
 <link rel="stylesheet" href="/static/jqcloud.min.css">
-<script src="/static/jqcloud.min.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -10,7 +9,7 @@
 {% endblock %}
 
 {% block footer %}
-
+<script src="/static/jqcloud.min.js"></script>
 <script>
 var tags = {{ tags|safe }};
 var words = [];
@@ -22,10 +21,8 @@ $.each(tags, function(key, value) {
 
 	words.push(ob);
 });
-console.log(words);
 
 $(function() {
-
   $('#tags').jQCloud(words, {
   	autoResize: true,
   	colors: ["#00B5AD", "#1B1C1D", "#F2C61F", "#00B5AD", "#D95C5C", "#564F8A", "#D9499A", "#E07B53", "#5BBD72"],
