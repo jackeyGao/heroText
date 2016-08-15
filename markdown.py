@@ -51,8 +51,8 @@ class HighlighterRenderer(m.HtmlRenderer):
 
 markdown = m.Markdown(
     HighlighterRenderer(),
-    extensions=m.EXT_FENCED_CODE |\
-    m.EXT_NO_INTRA_EMPHASIS |\
+    extensions=\
+    m.EXT_FENCED_CODE |\
     m.EXT_TABLES |\
     m.EXT_QUOTE
 )
@@ -61,4 +61,7 @@ markdown = m.Markdown(
 
 def markrender(content):
     return markdown(content)
+
+if __name__ == '__main__':
+    print markrender('你好, 我是**JackeyGao**')
 
