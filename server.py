@@ -7,6 +7,7 @@ Created Time: 四  8/11 11:38:45 2016
 '''
 import json
 import arrow
+from commands import getstatusoutput
 from itertools import chain
 from collections import defaultdict
 from collections import Counter
@@ -20,6 +21,7 @@ from peewee import DoesNotExist
 from pagination import Pagination
 from db import Post
 from markdown import markrender
+from parse import parse_all, save
 
 app = Flask(__name__)
 PER_PAGE = 15
@@ -95,10 +97,11 @@ def post(title):
 def uploads(path):
     return send_from_directory('uploads', path)
 
-
-@app.route('/test')
-def test():
-    return render_template('test.html', **locals())
+@app.route('/update')
+def update():
+    getstatusoutput('git pull origin master')
+    parse_all('./uploads/_posts/', save)
+    return "OK"
 
 app.jinja_env.globals['to_page'] = url_for_other_page
 app.jinja_env.globals['humanize'] = humanize
