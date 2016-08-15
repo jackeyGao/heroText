@@ -7,6 +7,7 @@ Created Time: 四  8/11 11:38:45 2016
 '''
 import json
 import arrow
+from dateutil import tz
 from commands import getstatusoutput
 from itertools import chain
 from collections import defaultdict
@@ -25,7 +26,7 @@ from parse import parse_all, save
 
 app = Flask(__name__)
 PER_PAGE = 15
-TIMEZONE = "UTC"
+TIMEZONE = "Asia/Shanghai"
 
 def url_for_other_page(page):
     params = dict(request.args.copy())
@@ -36,7 +37,7 @@ def url_for_other_page(page):
 
 
 def humanize(time):
-    if arrow.get(time) > arrow.now().datetime:
+    if arrow.get(time, TIMEZONE) > arrow.now(TIMEZONE):
         return "Sticky Post"
 
     if time is None:
