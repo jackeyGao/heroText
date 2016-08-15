@@ -125,7 +125,7 @@ body > #container {
 .markdown .blockquote-normal  { 
     background-color: #FEF9E7; 
     color:#767676; 
-    margin:0; 
+    margin: 14px 0px; 
     border-left: 0.5em #5BBD72 solid; 
     padding: 5px 14px; 
 }
