@@ -97,7 +97,7 @@ def post(title):
 def uploads(path):
     return send_from_directory('uploads', path)
 
-@app.route('/update')
+@app.route('/update', methods=['POST', 'GET'])
 def update():
     getstatusoutput('git pull origin master')
     parse_all('./uploads/_posts/', save)
