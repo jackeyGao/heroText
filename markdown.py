@@ -19,7 +19,7 @@ cleanr =re.compile('<.*?>')
 class HighlighterRenderer(m.HtmlRenderer):
     def blockcode(self, text, lang):
         if not lang:
-            return '\n<div class="highlight"><pre>{}</pre></div>\n'.format(
+            return '''\n<div class="highlight"><pre>{}</pre></div>\n'''.format(
                 text.strip())
 
         lexer = get_lexer_by_name(lang, stripall=True)
@@ -40,6 +40,9 @@ class HighlighterRenderer(m.HtmlRenderer):
 
             return '<blockquote class="blockquote-center">%s</blockquote>' % text
         return '<blockquote class="blockquote-normal">%s</blockquote>' % text
+
+    def image(self, link, title="", alt=''):
+        return '<p><img src="%s" alt="%s"></p>\n<p class="img-title">"%s"</p>' % (link, alt, title)
 
 
 

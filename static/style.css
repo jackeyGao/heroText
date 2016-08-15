@@ -112,8 +112,7 @@ body > #container {
 .markdown table tr:nth-child(2n) {background-color: #f8f8f8;}
 
 
-.markdown pre { background-color:#2C3E50  ; padding: 14px; border-radius: 5px; color: #FEF9E7; }
-.markdown pre { font-family: monospace,Menlo,Monaco,"Courier New",; font-size: 12px; }
+.markdown pre { background-color: #2C3E50; padding: 14px; border-radius: 5px; color: #FCF3CF; }
 .markdown code { background-color:#E9F7EF; padding: 1px 5px; border-radius: 5px; }
 .markdown p { color: #767676; }
 .markdown h1 { font-size: 1.2rem; }
@@ -170,5 +169,5 @@ body > #container {
 }
 
 .markdown blockquote ul { padding: 0px 20px; }
-
+.markdown .img-title { text-align: center; font-size: 14px; margin-top: -10px;font-style:oblique;font-weight: bold;  }
 
