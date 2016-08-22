@@ -23,4 +23,4 @@ tags:
 
 额外还能学习到`localStorage`的简单用法.可以说通过详细学习此例子可以完成vue.js最基本的入门操作， 完全熟悉不太容易， 主要是感受下vue.js的思想，和正确的使用方式, 后面还需要多写多看.
 
-<iframe width="100%" height="700" src="https://omem.me/apps/vue-semantic-todos/index.html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="600" src="https://omem.me/apps/vue-semantic-todos/index.html" frameborder="0"></iframe>
