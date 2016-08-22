@@ -23,7 +23,7 @@
     <a href="/down/_posts/{{ post.filename }}"><i class="download icon"></i>markdown</a>
     <div class="divider">|</div>
     {% for tag in post.get_tags() %}
-    #<a href="/?tag={{ tag }}"><span class="blue text">{{ tag }}</span></a>
+    <span class="grey text">#</span><a href="/?tag={{ tag }}"><span class="blue text">{{ tag }}</span></a>
     {% endfor %}
   </div>
   <div class="ui divider" style="margin: 8px -14px"></div>
