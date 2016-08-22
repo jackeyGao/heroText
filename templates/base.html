@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Python程序员, JackeyGao, 工作地点上海">
     <meta property="qc:admins" content="26552771055655" />
     {% include 'favicon.html' %}
@@ -14,54 +14,48 @@
     <title>{% block title %}{% endblock %} - JackeyGao</title>
   </head>
   <body>
-    <div id="container" style="margin-top: 30px;">
-    <!-- header start -->
-    <div class="ui fluid container">
-      <div class="ui centered grid">
-        <div class="eight center aligned wide column"  style="margin-top: 30px;">
-          <a href="/">
-            <h1 class="ui blue monospaced header" style="font-size: 3em;"><span  class="text monospaced grey">JackeyGao</span></h1>
-          </a>
-
-          <div class="ui horizontal bulleted link list">
-          <a class="item" href="/">
-            <span class="blue text">首页</span>
-          </a>
-          <a class="item" href="/tags/">
-            <span class="blue text">标签</span>
-          </a>
-          <a class="item" href="/archives/">
-            <span class="blue text">归档</span>
-          </a>
-          </div>
-
-          <div class="ui horizontal divider">
-            <a href="https://omem.me/"><i class="home icon"></i></a>
-          </div>
-        </div>
+    <div id="header" class="ui container">
+      <a>
+      <h1 class="ui blue centered monospaced header" style="font-size: 3em;"><span  class="text monospaced grey">JackeyGao</span></h1>
+      </a>
+      <div style="text-align: center;">
+      <div class="ui horizontal bulleted link list">
+      <a class="item" href="/">
+        <span class="blue text">首页</span>
+      </a>
+      <a class="item" href="/tags/">
+        <span class="blue text">标签</span>
+      </a>
+      <a class="item" href="/archives/">
+        <span class="blue text">归档</span>
+      </a>
       </div>
+      </div>
+      <div class="ui horizontal divider" style="margin: 0px;">
+        <a href="https://omem.me/"><i class="home icon"></i></a>
+      </div>
+    </div>
     <!-- content start -->
-    <div class="ui grid" style="margin-top: 1em;margin-bottom: 3em;">
-      <div class="{% block wide %}centered aligned seven{% endblock %} wide column" style="padding: 0px; border-radius: 5px;">
+    <div class="ui text container" style="{% block contentstyle %}max-width: 650px!important;{% endblock %}" style="margin-bottom: 3em;">
+      <div id="subheader" style="height: 14px;">{% block subheader %}{% endblock %}</div>
       {% block content %}
       {% endblock %}
-      </div>
       {% block extra %}
       {% endblock %}
     </div>
     <!-- content start -->
     <!-- header end -->
-    </div>
 
-    <div class="ui centered grid">
+
+    <div id="footer" class="ui text container">
       <div class="ten wide column" style="padding: 0px;">
         <div class="ui horizontal divider">
           <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="grey text" style="font-size: 12px;"><i class="grey creative commons icon" ></i>by-nc-sa 4.0</span></a>
         </div>
-        <div id="footer">
-          <span class="monospaced grey text"><b><a href="https://github.com/jackeyGao/heroText"><i class="green github icon"></i></a> | © 2016 JackeyGao. Power by <a href="https://www.conoha.jp/referral/?token=G8vOyReluNtZN0fQSSAyNzldtPOCAFhanp39bkuppaJG.w90xHc-01S"><span class="green text">Conoha</span></a>.Based on <a href="http://flask.pocoo.org/"><span class="green text">Flask</span></a>.</b> </span>
-        </div>
+
+        <span class="monospaced credit"><a href="https://github.com/jackeyGao/heroText"><i class="green github icon"></i></a> star on github </br>© 2016 JackeyGao. Power by <a href="https://www.conoha.jp/referral/?token=G8vOyReluNtZN0fQSSAyNzldtPOCAFhanp39bkuppaJG.w90xHc-01S"><span class="green text">Conoha</span></br></a>.Based on <a href="http://flask.pocoo.org/"><span class="green text">Flask</span></a>. </span>
       </div>
+    </div>
     </div>
     {% block footer %}
     {% endblock %}
