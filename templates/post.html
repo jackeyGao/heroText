@@ -18,12 +18,12 @@
   </div>
   <div class="ui divider" style="margin: 8px -14px"></div>
   <div class="ui breadcrumb">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><i class="grey creative commons icon"></i></a>
+    <a id="creative" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><i class="grey creative commons icon"></i><span class="red text"></span></a>
     <div class="divider">|</div>
-    <a href="/down/_posts/{{ post.filename }}"><i class="download icon"></i>markdown</a>
+    <a id="down" href="/down/_posts/{{ post.filename }}"><i class="download icon"></i><span class="teal text">Downmark</span></a>
     <div class="divider">|</div>
     {% for tag in post.get_tags() %}
-    <span class="grey text">#</span><a href="/?tag={{ tag }}"><span class="blue text">{{ tag }}</span></a>
+    <a href="/?tag={{ tag }}"><span class="teal tagname text">{{ tag }}</span></a>
     {% endfor %}
   </div>
   <div class="ui divider" style="margin: 8px -14px"></div>
@@ -33,6 +33,26 @@
 
 {% block footer %}
 <script>
+  $('#down').on("mouseover", function() {
+    $(this).find('.download').toggleClass("red");
+    $(this).find('span').toggleClass("red");
+    $(this).closest('.breadcrumb').find('#creative i').toggleClass('grey');
+    $(this).closest('.breadcrumb').find('#creative i').toggleClass('red');
+    $('.breadcrumb #creative i')
+      .transition('set looping')
+      .transition('shake', '2000ms')
+    ;
+  })
+
+  $('#down').on("mouseleave", function() {
+    $(this).find('.download').toggleClass("red");
+    $(this).find('span').toggleClass("red");
+    $(this).closest('.breadcrumb').find('#creative i').toggleClass('grey');
+    $(this).closest('.breadcrumb').find('#creative i').toggleClass('red');
+    $('.breadcrumb #creative i')
+      .transition('remove looping')
+    ;
+  })
   var duoshuoQuery = {short_name:"jackeygaoblog"};
     (function() {
       var ds = document.createElement('script');

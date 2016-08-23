@@ -103,3 +103,21 @@
   }
 }
 
+.tagname:hover {
+  color: #5BBD72;
+}
+
+.tagname::before {
+  content: "#";
+  color: #5BBD72;
+}
+
+.tagname:hover::before {
+  color: #00B5AD;
+}
+
+
+
+
+
+
