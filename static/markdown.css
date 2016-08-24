@@ -48,7 +48,12 @@
 .markdown .blockquote-center::after { position: absolute;content: ' ';display: block;width: 100%;height: 25px;opacity: 0.2;background-repeat: no-repeat;background-position: 0 -6px;background-size: 22px 22px; }
 .markdown .blockquote-center::before { top: -20px;background-image: url("/static/quote-l.svg"); }
 .markdown .blockquote-center::after { bottom: -20px;background-image: url("/static/quote-r.svg"); background-position: 100% 8px; }
-.markdown .blockquote-center p { font-family: "微软雅黑"; margin-bottom: 30px; font-size: 18px; text-align: center; }
+.markdown .blockquote-center p { font-family: "微软雅黑"; font-size: 18px; text-align: center; line-height: 300%; }
+.markdown .blockquote-center em { font-family: "微软雅黑"; font-size: 14px; text-align: center; line-height: 300%; }
+.markdown .blockquote-center strong:hover::before { content: "《"; color: #5BBD72; }
+.markdown .blockquote-center strong:hover::after { content: "》"; color: #5BBD72; }
+.markdown .blockquote-center em::before { content: "-- "; color: #5BBD72; }
+.markdown .blockquote-center em::after { content: " --"; color: #5BBD72; }
 .markdown blockquote ul { padding: 0px 20px; }
 .markdown .img-title { text-align: center; font-size: 14px; margin-top: -10px; font-style:oblique; font-weight: bold;}
 .markdown .img-title span { padding: 0 20px; color: #BFBFBF; border-bottom: 2px solid #EEEEEE; padding-bottom: .6em; }
