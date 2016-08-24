@@ -9,7 +9,7 @@ tags:
 
 ![黎明](/uploads/images/photo-1415931633537-351070d20b81.jpeg)
 
-> center
+> %center
 > 夜
 > 厚夜
 > 路灯下的猫
@@ -18,4 +18,3 @@ tags:
 > 在煎熬
 > 如同， 美好云雾缭绕
 > 还好， 不再不可救药
-> center
