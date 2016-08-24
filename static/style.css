@@ -60,6 +60,16 @@
   font-style:italic;
 }
 
+#postheader .ui.two.column.stackable.grid {
+  margin-bottom: 0px;
+}
+
+
+#postheader .time.wide.column span {
+    float: right;
+}
+
+
 
 @media only screen and (max-width: 767px) {
   .ui.container {
@@ -101,7 +111,48 @@
   #subheader {
     font-size: 12px;
   }
+
+  #postheader .title.wide.column {
+    text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  #postheader .time.wide.column {
+    padding: 0px 0px;
+    text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  
+  #postheader .ui.two.column.stackable.grid .wide.column {
+    padding-bottom: .5rem!important;
+  }
+  #postheader .ui.two.column.stackable.grid .title.wide.column {
+    padding-bottom: 0rem!important;
+  }
+
+  #postheader .time.wide.column span {
+    float: none;
+    font-style:italic;
+  }
+
+  #postheader .time.wide.column span::before {
+    content: "-- ";
+    color: #5BBD72;
+  }
+
+  #postheader .time.wide.column span::after {
+    content: " --";
+    color: #5BBD72;
+  }
 }
+
+
+
 
 .tagname:hover {
   color: #5BBD72;
@@ -114,6 +165,28 @@
 
 .tagname:hover::before {
   color: #00B5AD;
+}
+
+.ui.archive.selection.list .title {
+  color: #566573;
+  line-height: 140%;
+}
+
+
+.ui.archive.selection.list .title:hover {
+  color: #5BBD72;
+  border-bottom: 3px solid #5BBD72;
+}
+
+
+#posts .title {
+  color: #566573;
+  line-height: 140%;
+}
+
+#posts .title:hover {
+  color: #5BBD72;
+  border-bottom: 3px solid #5BBD72;
 }
 
 

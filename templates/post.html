@@ -8,16 +8,21 @@
 {% block contentstyle %} max-width: 700px!important;{% endblock %}
 
 {% block content %}
-<div class="ui left aligned clearing monospaced segment" style="padding: 14px;">
-  <div class="header" style="height: 45px;">
-    <h5 class="ui grey right floated header">{{ post.time.strftime("%B %d, %Y, %H:%M %p") }}</h5>
-    <h3 class="ui green left floated header">{{ post.title }}</h3>
+<div id="postheader" class="ui left aligned clearing segment" style="padding: 14px;">
+  <div class="ui two column stackable grid">
+    <div class="title ten wide column">
+      <h3 class="ui green header">{{ post.title }}</h3>
+    </div>
+    <div class="time six wide column">
+      <span class="grey text" style="">{{ post.time.strftime("%B %d, %Y, %H:%M %p") }}</span>
+    </div>
   </div>
-  <div class="markdown codehilite">
+
+  <div class="markdown monospaced codehilite">
     {{ markrender(post.content)|safe }}
   </div>
   <div class="ui divider" style="margin: 8px -14px"></div>
-  <div class="ui breadcrumb">
+  <div class="ui monospaced breadcrumb">
     <a id="creative" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><i class="grey creative commons icon"></i><span class="red text"></span></a>
     <div class="divider">|</div>
     <a id="down" href="/down/_posts/{{ post.filename }}"><i class="download icon"></i><span class="teal text">Downmark</span></a>

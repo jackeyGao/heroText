@@ -4,7 +4,7 @@
 
 {% block content %}
 {% for year, posts in data.items() %}
-  <div class="ui year-header selection list" style="margin: 0px 0px;">
+  <div id="archives" class="ui year-header selection list" style="margin: 0px 0px;">
     <div class="item" data-year="{{ year }}">
       <div class="right floated content">
       <h5 class="ui teal header" style="margin-bottom: 0px;">
@@ -17,14 +17,14 @@
     </div>
   </div>
 
-  <div id="{{ year }}-items" class="ui selection list" style="margin-top: 0px;margin-left: 28px;display: none;">
+  <div id="{{ year }}-items" class="ui archive selection list" style="margin-top: 0px;margin-left: 28px;display: none;">
     {% for post in posts|sort(attribute='time', reverse=True) %}
     <div class="item">
       <div class="right floated content">
         <span class="grey text">{{ post.time.strftime('%Y-%m-%d') }}</span>
       </div>
       <div class="content">
-        <div class="header"><a href="/post/{{ post.title }}"><span class="blue text">{{ post.title }}</span></a></div>
+        <div class="header"><a href="/post/{{ post.title }}"><span class="title">{{ post.title }}</span></a></div>
       </div>
     </div>
     {% endfor %}

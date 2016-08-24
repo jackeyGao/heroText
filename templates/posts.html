@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block content %}
-<div id="posts" class="ui middle aligned list">
+<div id="posts" class="ui middle aligned animated list">
   {% for post in posts %}
   <div class="item" style="margin-bottom: 15px;">
   	<div class="right floated content">
@@ -21,7 +21,7 @@
     </div>
     <div class="content">
       <div class="header">
-      	<a href="/post/{{ post.title }}"><span class=" text">{{ post.title }}</span></a>
+      	<a href="/post/{{ post.title }}"><span class="title" >{{ post.title }}</span></a>
       </div>
       <div class="monospaced description">
       	{% set tags = post.tags.split(',') %}
