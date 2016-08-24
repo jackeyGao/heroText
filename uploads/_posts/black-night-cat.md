@@ -7,9 +7,10 @@ tags:
 ---
 
 
-![黎明](/uploads/images/photo-1415931633537-351070d20b81.jpeg)
+![黎明](/uploads/images/photo-1415931633537-351070d20b81.jpeg "黎明")
 
 > %center
+> **黑夜的猫**
 > 夜
 > 厚夜
 > 路灯下的猫
