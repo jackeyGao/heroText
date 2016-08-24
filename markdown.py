@@ -55,7 +55,6 @@ class HighlighterRenderer(m.HtmlRenderer):
             return '<p><img src="%s" alt="%s"></p>\n' % (link, alt)
 
     def table(self, content):
-        print content
         return '<table class="ui selectable celled table">' + content + '</table>'
 
 
