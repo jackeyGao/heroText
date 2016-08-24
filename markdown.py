@@ -30,20 +30,27 @@ class HighlighterRenderer(m.HtmlRenderer):
 
     def blockquote(self, text):
         ctext = re.sub(cleanr,'', text).strip()
-        if ctext.startswith('center\n') and ctext.endswith('\ncenter'):
-            text = ""
-            for t in ctext.splitlines():
-                if t.strip() == 'center':
-                    continue
+        if ctext.startswith('%center\n'):
+            ctext = ctext.replace('%center', '')
+            className = "blockquote-center"
+        elif ctext.startswith('%warning'):
+            ctext = ctext.replace('%warning', '')
+            className = "blockquote-warning"
+        elif ctext.startswith('%error'):
+            ctext = ctext.replace('%error', '')
+            className = "blockquote-error"
+        else:
+            className = "blockquote-normal"
+        
+        text = ""
+        for t in ctext.splitlines():
+            text += '<p>%s</p>\n' % t.strip()
 
-                text += '<p>%s</p>\n' % t.strip()
-
-            return '<blockquote class="blockquote-center">%s</blockquote>' % text
-        return '<blockquote class="blockquote-normal">%s</blockquote>' % text
+        return '<blockquote class="%s">%s</blockquote>' % (className, text)
 
     def image(self, link, title="", alt=''):
         if title:
-            return '<p><img src="%s" alt="%s"></p>\n<p class="img-title">"%s"</p>' % (link, alt, title)
+            return '<p><img src="%s" alt="%s"></p>\n<div class="img-title"><span>%s</span></div>' % (link, alt, title)
         else:
             return '<p><img src="%s" alt="%s"></p>\n' % (link, alt)
 
