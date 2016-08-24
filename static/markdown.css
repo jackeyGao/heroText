@@ -21,13 +21,7 @@
 .markdown li p:last-child { margin:0 }
 .markdown dd { margin: 0 0 0 2em; }
 .markdown img { border: 1px solid #eeeeee; border-radius: 5px;  }
-.markdown table { border-collapse: collapse; border-spacing: 0; color: #767676;  }
-.markdown table { display: block;overflow: auto;word-break: normal;word-break: keep-all; margin-bottom: 10px;}
-.markdown table th {font-weight: bold;}
-.markdown table th,
-.markdown table td {padding: 6px 13px;border: 1px solid #ddd;}
-.markdown table tr {background-color: #fff;border-top: 1px solid #ccc;}
-.markdown table tr:nth-child(2n) {background-color: #f8f8f8;}
+.markdown table { color: #767676;m argin-bottom: 10px; }
 .markdown pre { background-color: #2C3E50; padding: 14px; border-radius: 5px; color: #FCF3CF; }
 .markdown code { background-color:#E9F7EF; padding: 1px 5px; border-radius: 5px; }
 .markdown p { color: #767676; }
