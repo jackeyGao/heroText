@@ -16,7 +16,7 @@
 }
 
 .monospaced {
-	font-family: Courier New;
+	font-family: Courier New!important;
 }
 
 .greyborder {
